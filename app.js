@@ -2,7 +2,6 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-
 const path = require('path');
 require('dotenv').config();
 
@@ -20,14 +19,12 @@ app.use(session({
 }));
 
 // Routes
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth');  // updated path
 app.use('/auth', authRoutes);
-const gameRoutes = require('./routes/game');
+const gameRoutes = require('./routes/game');  // updated path
 app.use('/game', gameRoutes);
-const leaderboardRoutes = require('./routes/leaderboard');
+const leaderboardRoutes = require('./routes/leaderboard');  // updated path
 app.use('/', leaderboardRoutes);
-
-
 
 app.get('/', (req, res) => {
     res.redirect('/auth/login');

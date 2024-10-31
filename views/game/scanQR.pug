@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    h2 Scan QR Code to Unlock Level
+    form(action="/game/scan-qr" method="post")
+        label(for="qrCode") Enter QR Code:
+        input(type="text" name="qrCode" required)
+        button(type="submit") Submit
+    if scanMessage
+        p #{scanMessage}
+    a(href="/game/dashboard") Back to Dashboard

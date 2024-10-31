@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    h2 Use Event Card
+    form(action="/game/event-card" method="post")
+        label(for="cardCode") Enter Event Card Code:
+        input(type="text" name="cardCode" required)
+        button(type="submit") Use Card
+    if cardAction
+        p Card Effect: #{cardAction}
+    a(href="/game/dashboard") Back to Dashboard

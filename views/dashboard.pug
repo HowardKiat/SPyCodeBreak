@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+    h2 Welcome, #{username}
+    p Select a game action to start playing:
+    ul
+        li: a(href="/game/scan-qr") Scan QR Code
+        li: a(href="/game/event-card") Enter Event Card Code
+        li: a(href="/leaderboard") View Leaderboard
+    p Current Score: #{currentScore}

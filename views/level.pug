@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    h2 #{level.level_name}
+    p Level Status: #{level.level_status}
+    if level.hint
+        p Hint: #{level.hint}
+    if level.qr_code_scanned
+        p Congratulations, QR code scanned! Proceed to complete level.
+    else
+        p Please scan the level's QR code to continue.
+
+    a(href="/game/dashboard") Back to Dashboard
